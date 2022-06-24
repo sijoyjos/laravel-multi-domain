@@ -27,7 +27,6 @@ class RouteServiceProvider extends ServiceProvider
      * @var string|null
      */
     // protected $namespace = 'App\\Http\\Controllers';
-    protected $subdomain1Namespace = 'Subdomain1\\Http\\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -42,7 +41,7 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::domain('subdomain1.' . env('APP_URL'))
                 ->middleware('web')
-                ->namespace($this->subdomain1Namespace)
+                ->namespace($this->namespace)
                 ->group(base_path('routes/subdomain1.php'));
 
             Route::prefix('api')
